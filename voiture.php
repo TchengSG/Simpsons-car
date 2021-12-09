@@ -1,5 +1,62 @@
 <?php
 
+// New version Parent Class Vehicle
+
+<?php
+
+require_once 'Vehicle.php';
+
+class Voiture extends Vehicle
+{
+    //ATTRIBUTES
+
+    private string $energy;
+
+    private int $energyLevel;
+
+    // CONSTANT Attributes
+
+    public const ALLOWED_ENERGIES = [
+        'fuel',
+        'electric',
+    ];
+
+    // METHODS
+
+    public function __construct(string $color, int $nbSeats, string $energy)
+    {
+        parent::__construct($color, $nbSeats);
+        $this->setEnergy($energy);
+    }
+
+    public function getEnergy(): string
+    {
+        return $this->energy;
+    }
+
+    public function setEnergy(string $energy): voiture
+    {
+        if (in_array($energy, self::ALLOWED_ENERGIES)) {
+            $this->energy = $energy;
+        }
+        return $this;
+    }
+
+    public function getEnergyLevel(): int
+    {
+        return $this->energyLevel;
+    }
+
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
+}
+
+
+
+
+/* PREVIOUS VERSION
 class Voiture
 {
     //Attributes
@@ -77,4 +134,4 @@ class Voiture
     {
         return $this->currentLevelOfEnergy;
     }
-}
+} */
