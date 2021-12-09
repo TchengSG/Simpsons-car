@@ -1,6 +1,21 @@
 
 <?php
 
+// NEW VERSION inc TRUCK
+
+require_once 'Vehicle.php';
+
+class Bicycle extends Vehicle
+{
+
+}
+
+
+
+
+
+/* PREVIOUS VERSION 
+
 // class Bicycle
 
 class Bicycle
@@ -91,5 +106,5 @@ class Bicycle
     {
         return $this->nbWheels;
     }
-
-}
+    
+} */
